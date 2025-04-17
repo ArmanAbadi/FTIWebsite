@@ -1,0 +1,93 @@
+html, body {
+  margin:0px;
+  height:100%;
+}
+
+.box{
+  position:absolute;
+  top:0%;
+  bottom:0%;
+  left:0%;
+  right:0%;
+}
+
+.bg{
+  position:absolute;
+  top:5%;
+  bottom:5%;
+  left:5%;
+  right:5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./background.jpg');
+  background-position: center;
+  border-radius: 50px;
+}
+
+.center{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.White {
+  background: white;
+}
+.Transparent {
+  background: transparent;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: transparent;
+  overflow:hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  background-color: white;
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-image:
+    url(https://mdn.github.io/shared-assets/images/examples/mask-star.svg)
+}
+
+
+/* Add a color to the active/current link
+.topnav a.active {
+  background-color: white;
+  color: white;
+}
+*/
+
+/*
+.masked {
+  width: 200px;
+  height: 200px;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+
+  background: red;
+  mask-image:
+    url(https://mdn.github.io/shared-assets/images/examples/mask-star.svg),
+    radial-gradient(transparent 50%, black);
+}
+*/
