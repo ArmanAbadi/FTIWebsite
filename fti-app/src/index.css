@@ -13,13 +13,13 @@ html, body {
 
 .bg{
   position:absolute;
+  min-height:100%;
   top:5%;
-  bottom:5%;
   left:5%;
   right:5%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./background.jpg');
+  background-image: url('./background.png');
   background-position: center;
   border-radius: 50px;
 }
@@ -46,9 +46,10 @@ html, body {
 .topnav {
   background-color: transparent;
   overflow:hidden;
+  display:flex;
 }
 
-/* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar
 .topnav a {
   background-color: white;
   float: left;
@@ -58,8 +59,36 @@ html, body {
   text-decoration: none;
   font-size: 17px;
 }
+*/
 
-/* Change the color of links on hover */
+.topnav a{
+  cursor: pointer;
+}
+
+.CorporateContent{
+  padding: 5%;
+  text-align: center;
+}
+
+.Title{
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+.Name{
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+.Description{
+  font-size: 18px;
+  text-align: center;
+}
+.NewsName{
+  color: black;
+  font-weight: 600;
+}
+/* Change the color of links on hover
 .topnav a:hover {
   background-color: white;
   color: black;
@@ -69,6 +98,7 @@ html, body {
   mask-image:
     url(https://mdn.github.io/shared-assets/images/examples/mask-star.svg)
 }
+    */
 
 
 /* Add a color to the active/current link
@@ -91,3 +121,31 @@ html, body {
     radial-gradient(transparent 50%, black);
 }
 */
+
+.container .containerBox {
+  width: 100%;
+  display: table;
+  padding-top: 5%;
+}
+
+.container .containerBox .box-row {
+  display: table-row;
+}
+
+.container .containerBox .box-cell {
+  display: table-cell;
+  width: 33%;
+  padding: 10px;
+}
+
+.container .containerBox .box-cell.box1 {
+  text-align: justify;
+}
+
+.container .containerBox .box-cell.box2 {
+  text-align: justify
+}
+
+.container .containerBox .box-cell.box3 {
+  text-align: justify;
+}
