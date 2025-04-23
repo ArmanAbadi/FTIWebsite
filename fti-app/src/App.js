@@ -1,3 +1,4 @@
+
 function App() {
   return (
     <div className="box">
@@ -10,10 +11,20 @@ function App() {
                 <img src={"logoSmall.png"} alt="Logo"/>
             </div>
           </div>
+          
 
-          <div style={{flex:"1", backgroundColor:"white"}}>
+          <svg width="81" height="89" viewBox="0 0 81 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0V88.5001C35.5001 88.5001 38 58.0001 38 50.5001C38 15.0001 81 16 81 16V0H0Z" fill="white"/>
+</svg>
 
-          </div>
+<svg width="355" height="88" viewBox="0 0 355 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0H355V15H0V0Z" fill="white"/>
+</svg>
+
+<svg width="81" height="89" viewBox="0 0 81 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M81 0V88.5001C45.4999 88.5001 43 58.0001 43 50.5001C43 15.0001 0 16 0 16V0H81Z" fill="white"/>
+</svg>
+
 
           <a id="LifeOffering" style={{display:"none", float:"right", height:"89px"}} onClick={() => LifeOffering()}>
             <svg width="355" height="89" viewBox="0 0 355 89" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +94,7 @@ function App() {
               <div className="Description">President/CEO</div>
               <br/>
               <div className="Name">Steven Nguyen</div>
-              <div className="Description">CFO</div>
+              <div className="Description">CFO</div><br/><br/>
             </div>
 
             <div>
@@ -296,6 +307,8 @@ function App() {
     </div>
   );
 }
+
+//<div style={{flex:"1", height:"89px", backgroundColor:"transparent"}}></div>
 
 export default App;
 

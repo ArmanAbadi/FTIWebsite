@@ -14,7 +14,6 @@ html, body {
 .bg{
   position:absolute;
   min-height:100%;
-  top:5%;
   left:5%;
   right:5%;
   background-size: cover;
