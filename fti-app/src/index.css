@@ -6,7 +6,7 @@ html, body {
 .box{
   position:absolute;
   top:0%;
-  bottom:0%;
+  bottom:5%;
   left:0%;
   right:0%;
 }
@@ -41,24 +41,12 @@ html, body {
   background: transparent;
 }
 
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: transparent;
   overflow:hidden;
   display:flex;
 }
 
-/* Style the links inside the navigation bar
-.topnav a {
-  background-color: white;
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-*/
 
 .topnav a{
   cursor: pointer;
@@ -87,39 +75,12 @@ html, body {
   color: black;
   font-weight: 600;
 }
-/* Change the color of links on hover
-.topnav a:hover {
-  background-color: white;
+.BrandName{
+  font-size: 24px;
   color: black;
-
-  mask-repeat: no-repeat;
-  mask-size: 100%;
-  mask-image:
-    url(https://mdn.github.io/shared-assets/images/examples/mask-star.svg)
+  font-weight: 600;
+  margin:16px;
 }
-    */
-
-
-/* Add a color to the active/current link
-.topnav a.active {
-  background-color: white;
-  color: white;
-}
-*/
-
-/*
-.masked {
-  width: 200px;
-  height: 200px;
-  mask-repeat: no-repeat;
-  mask-size: 100%;
-
-  background: red;
-  mask-image:
-    url(https://mdn.github.io/shared-assets/images/examples/mask-star.svg),
-    radial-gradient(transparent 50%, black);
-}
-*/
 
 .container .containerBox {
   width: 100%;
@@ -148,3 +109,90 @@ html, body {
 .container .containerBox .box-cell.box3 {
   text-align: justify;
 }
+
+.TopBarItem{
+  display:block;
+}
+
+@media screen and (max-width: 2000px) {
+  .TopBarItem {
+    display:none;
+  }
+}
+
+.MenuIcon{
+  display:none;
+}
+
+@media screen and (max-width: 2000px) {
+  .MenuIcon {
+    display:block;
+  }
+}
+
+button {
+  background: var(--img) 50%/ contain #fff;
+  background-blend-mode: multiply;
+  transition: background-color .4s;
+  width:64px;
+  height:64px;
+}
+
+.MenuIcon {
+   --img: url('./MenuIcon.png');
+   background-size:contain;
+   background-repeat: no-repeat;
+   border: none;
+  }
+
+  .MenuIcon:active  {     
+    --img: url('./MenuIconClicked.png');
+}
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}

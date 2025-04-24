@@ -1,6 +1,25 @@
-import TopBar from './TopBar.png';
+import TopBar from './components/TopBar';
+import TopBarUnselected from './components/TopBarUnselected';
+import TopEmptyBar from './components/TopEmptyBar';
+import BotTab from './components/BotTab';
+
+import EmptyTabLeft from './EmptyTabLeft.png';
+import EmptyTabRight from './EmptyTabRight.png';
+import EmptyTabCenter from './EmptyTabCenter.png';
+
+import MenuIcon from './MenuIcon.png';
+import { preload } from 'react-dom';
+
+
+const defaultStyle = {position:"relative", height:"89px", display:"block"};
+const defaultStyleNone = {position:"relative", height:"89px", display:"none"};
+const bottomStyle = {position:"absolute", height:"200px", display:"block", bottom:"0px", left:"5%"};
+
 
 function App() {
+  preload("url('backgroundPale.png')", {
+    as: "image",
+  });
   return (
     <div className="box">
       <div id="bg" className="bg">
@@ -9,83 +28,77 @@ function App() {
 
           <div style={{display:"inline-block", backgroundColor:"white", padding: "0px 10px", cursor: "pointer"}} onClick={() => MainBackground()}>
             <div style={{display:"flex", backgroundColor:"white", height:"89px", textAlign: "center", justifyContent:"center", alignItems:"center"}}>
-                <img src={"logoSmall.png"} alt="Logo"/>
+                <img src={"logoSmall.png"} alt="Logo" />
             </div>
           </div>
+
           
-          <a style={{height:"89px"}}>
-          <svg width="81" height="89" viewBox="0 0 81 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0V88.5001C35.5001 88.5001 38 58.0001 38 50.5001C38 15.0001 81 16 81 16V0H0Z" fill="white"/>
-          </svg>
-          </a>
+          <img id="EmptyBarEnabled1" src={EmptyTabLeft}></img>
+          <img id="EmptyBarEnabled2" src={EmptyTabCenter} style={{flex:"1", height:"89px"}}></img>
+          <img id="EmptyBarEnabled3" src={EmptyTabRight}></img>
+
+          <div id="EmptyBarDisabled" style={{flex:"1", height:"89px", backgroundColor:"white", display:"none"}}></div>
           
-          <img src = {TopBar} style={{flex:"1", height:"89px", backgroundColor:"transparent"}}/>
+          <div  id="Partners" style={defaultStyleNone}>
+            <TopBar text="Partners" customClickEvent={() => Partners()}></TopBar>
+          </div>
+          <div  id="PartnersUnselected" style={defaultStyle}>
+            <TopBarUnselected text="Partners" customClickEvent={() => Partners()}></TopBarUnselected>
+          </div>
+
+          <div  id="Corporate" style={defaultStyleNone}>
+            <TopBar text="Corporate" customClickEvent={() => Corporate()}></TopBar>
+          </div>
+          <div  id="CorporateUnselected" style={defaultStyle}>
+            <TopBarUnselected text="Corporate" customClickEvent={() => Corporate()}></TopBarUnselected>
+          </div>
+
+          <div  id="OurBrands" style={defaultStyleNone}>
+            <TopBar text="Our Brands" customClickEvent={() => OurBrands()}></TopBar>
+          </div>
+          <div  id="OurBrandsUnselected" style={defaultStyle}>
+            <TopBarUnselected text="Our Brands" customClickEvent={() => OurBrands()}></TopBarUnselected>
+          </div>
+
+          <div  id="LifeOffering" style={defaultStyleNone}>
+            <TopBar text="Life Offering" customClickEvent={() => LifeOffering()} ></TopBar>
+          </div>
+          <div  id="LifeOfferingUnselected" style={defaultStyle}>
+            <TopBarUnselected text="Life Offering" customClickEvent={() => LifeOffering()} ></TopBarUnselected>
+          </div>
+
+          <div  id="News" style={defaultStyleNone}>
+          < TopBar text="News" customClickEvent={() => News()} ></TopBar>
+          </div>
+          <div  id="NewsUnselected" style={defaultStyle}>
+            <TopBarUnselected text="News" customClickEvent={() => News()} ></TopBarUnselected>
+          </div>
+
+          <div  id="StockQuote" style={defaultStyleNone}>
+            <TopBar text="Stock Quote" customClickEvent={() => StockQuote()} ></TopBar>
+          </div>
+          <div  id="StockQuoteUnselected" style={defaultStyle}>
+            <TopBarUnselected text="Stock Quote" customClickEvent={() => StockQuote()} ></TopBarUnselected>
+          </div>
+
+          <div style={{backgroundColor:"white", justifyContent:"center", alignItems:"center", display:"flex"}}>
+            <button className="MenuIcon"></button>
+          </div>
           
-          <a style={{height:"89px"}}>
-          <svg width="81" height="89" viewBox="0 0 81 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M81 0V88.5001C45.4999 88.5001 43 58.0001 43 50.5001C43 15.0001 0 16 0 16V0H81Z" fill="white"/>
-          </svg>
-          </a>
-
-
-          <a id="LifeOffering" style={{display:"none", float:"right", height:"89px"}} onClick={() => LifeOffering()}>
-            <svg width="355" height="89" viewBox="0 0 355 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M38 49.5C38 62 33.5 88.5 0 88.5V0H74H177.5H280.5H355V88.5C329.5 88.5 317.5 69.5 317.5 49.5C317.5 39 306.5 16 280.5 16C254.5 16 97.5 15.5 74 15.5C50.5 15.5 38 37 38 49.5Z" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Life Offering</text>
-            </svg>
-          </a>
-          
-          <a id="LifeOfferingUnselected" style={{float:"right", height:"89px"}} onClick={() => LifeOffering()}>
-            <svg width="355" height="89" viewBox="0 0 355 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="355" height="89" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Life Offering</text>
-            </svg>
-          </a>
-
-          <a id="Corporate" style={{display:"none",float:"right", height:"89px"}}>
-            <svg width="355" height="89" viewBox="0 0 355 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M38 49.5C38 62 33.5 88.5 0 88.5V0H74H177.5H280.5H355V88.5C329.5 88.5 317.5 69.5 317.5 49.5C317.5 39 306.5 16 280.5 16C254.5 16 97.5 15.5 74 15.5C50.5 15.5 38 37 38 49.5Z" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Corporate</text>
-            </svg>
-          </a>
-          <a id="CorporateUnselected" style={{float:"right", height:"89px"}} onClick={() => Corporate()}>
-            <svg width="355" height="89" viewBox="0 0 355 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="355" height="89" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Corporate</text>
-            </svg>
-          </a>
-
-          <a id="News" style={{display:"none",float:"right", height:"89px"}}>
-          <svg width="219" height="89" viewBox="0 0 219 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M38 50.2825C38 62.8531 33.5 88.4972 0 89V0H74H144.5H219V89C193.5 89 181.5 69.8927 181.5 49.7797C181.5 39.2203 170.5 16.0904 144.5 16.0904H74C50.5 16.0904 38 37.7119 38 50.2825Z" fill="white"/>
-              <text x="30%" y="75%" fill="black" font-size="35">News</text>
-            </svg>
-          </a>
-          <a id="NewsUnselected" style={{float:"right", height:"89px"}} onClick={() => News()}>
-          <svg width="219" height="89" viewBox="0 0 219 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0H219V89H0V0Z" fill="white"/>
-              <text x="30%" y="75%" fill="black" font-size="35">News</text>
-            </svg>
-          </a>
-
-          <a id="StockQuote" style={{display:"none", float:"right", height:"89px"}}>
-            <svg width="318" height="89" viewBox="0 0 318 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M38 49.5C38 62 33.5 88.5 0 88.5V0H74H177.5H280.5H317.5V49.5C317.5 39 306.5 16 280.5 16C254.5 16 97.5 15.5 74 15.5C50.5 15.5 38 37 38 49.5Z" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Stock Quote</text>
-            </svg>
-          </a>
-          <a id="StockQuoteUnselected" style={{float:"right", height:"89px"}} onClick={() => StockQuote()}>
-          <svg width="318" height="89" viewBox="0 0 318 89" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="318" height="89" fill="white"/>
-              <text x="28%" y="75%" fill="black" font-size="35">Stock Quote</text>
-            </svg>
-          </a>
         </div>
 
+        <div class="dropdown">
+  <button onclick={() => myFunction()} class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
         <div id="content">
 
           <div id="centerLogo" className="center">
-            <img src={"logo.png"} alt="Logo" />;
+            <img src={"logo.png"} alt="Logo" style={{width:"100%"}}/>
           </div>
           
           <div id="CorporateContent" className="CorporateContent" style={{display:"none"}}>
@@ -303,6 +316,26 @@ function App() {
               </div>
           </div>
 
+          <div id="OurBrandsContent" className="CorporateContent" style={{display:"none"}}>
+            <div className="BrandName"><a className="BrandName" href="https://www.skincareinabottle.com/">Illuminate</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://nayelle.com/">Nayelle</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.smashfacecosmetics.com/">SmashFace</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.portofinocosmetic.com/">Portofino Cosmetic</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.facefactor.ai/">FaceFactor</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.beautafy.com/">Beautafy</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.puredefender.com/">Pure Defender</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://www.beblack.com/">beBlack</a></div>
+          </div>
+
+          <div id="PartnersContent" className="CorporateContent" style={{display:"none"}}>
+            <div className="BrandName"><a className="BrandName" href="https://www.debutbiotech.com/">Debut Biotech</a></div>
+            <div className="BrandName"><a className="BrandName" href="https://exoceuticals.com/">NayelExoceuticalsle</a></div>
+          </div>
+
+        </div>
+
+        <div id="BotBar" style={bottomStyle}>
+          <BotTab text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTab>
         </div>
         
       </div>
@@ -314,57 +347,52 @@ function App() {
 
 export default App;
 
+function BotTabFunction(){
+  News();
+  DisplayNone("BotBar");
+}
+
 function LifeOffering(){
-  // DeselectAll();
-
-  // DisplayBlock("LifeOffering");
-  // DisplayNone("LifeOfferingUnselected");
-
   window.open("https://static1.squarespace.com/static/67ed877682298565186da10f/t/67f01fdb2674ed73dbf1e076/1743790044340/FTI+Foodtech+International+-+Form+45-106F19+LIFE+Offering+Document+%28Listed+Issuer+Financing+Document%29+-+Common+Shares+%28April+4+2025%29.pdf");
 }
 
-function Corporate(){
-  DeselectAll();
+function Partners(){
+  UnselectAll();
+  DisplayBlock("Partners");
+  DisplayNone("PartnersUnselected");
+  DisplayBlock("PartnersContent");
+  DisplayNone("centerLogo");
+  TabSelected();
+}
 
+function Corporate(){
+  UnselectAll();
   DisplayBlock("Corporate");
   DisplayNone("CorporateUnselected");
   DisplayBlock("CorporateContent");
+  DisplayNone("centerLogo");
+  TabSelected();
 }
 
 function StockQuote(){
-  // DeselectAll();
-  
-  // DisplayBlock("StockQuote");
-  // DisplayNone("StockQuoteUnselected");
-
-  window.open("https://money.tmx.com/en/quote/FTI");
-
+    window.open("https://money.tmx.com/en/quote/FTI");
 }
 
 function News(){
-  DeselectAll();
-
+  UnselectAll();
   DisplayBlock("News");
   DisplayNone("NewsUnselected");
   DisplayBlock("NewsContent");
-}
-
-function DeselectAll(){
-  TabSelected();
-
-  DisplayBlock("LifeOfferingUnselected");
-  DisplayBlock("CorporateUnselected");
-  DisplayBlock("StockQuoteUnselected");
-  DisplayBlock("NewsUnselected");
-
-  DisplayNone("LifeOffering");
-  DisplayNone("Corporate");
-  DisplayNone("StockQuote");
-  DisplayNone("News");
-
   DisplayNone("centerLogo");
-  DisplayNone("CorporateContent");
-  DisplayNone("NewsContent");
+  TabSelected();
+}
+function OurBrands(){
+  UnselectAll();
+  DisplayBlock("OurBrands");
+  DisplayNone("OurBrandsUnselected");
+  DisplayBlock("OurBrandsContent");
+  DisplayNone("centerLogo");
+  TabSelected();
 }
 
 function DisplayBlock(element){
@@ -379,11 +407,64 @@ function DisplayNone(element){
 function TabSelected(){
   var bg = document.getElementById("bg");
   bg.style.backgroundImage = "url('backgroundPale.png')";
+  
+  DisplayNone("EmptyBarEnabled1");
+  DisplayNone("EmptyBarEnabled2");
+  DisplayNone("EmptyBarEnabled3");
+  DisplayBlock("EmptyBarDisabled");
 }
 
 function MainBackground(){
-  DeselectAll();
+  UnselectAll();
   var bg = document.getElementById("bg");
   bg.style.backgroundImage = "url('background.png')";
   DisplayBlock("centerLogo");
+  DisplayBlock("BotBar");
+}
+
+function UnselectAll(){
+  DisplayBlock("LifeOfferingUnselected");
+  DisplayBlock("CorporateUnselected");
+  DisplayBlock("StockQuoteUnselected");
+  DisplayBlock("NewsUnselected");
+  DisplayBlock("OurBrandsUnselected");
+  DisplayBlock("PartnersUnselected");
+
+  DisplayNone("Partners");
+  DisplayNone("LifeOffering");
+  DisplayNone("Corporate");
+  DisplayNone("StockQuote");
+  DisplayNone("News");
+  DisplayNone("OurBrands");
+
+  DisplayBlock("centerLogo");
+  DisplayNone("NewsContent");
+  DisplayNone("CorporateContent");
+  DisplayNone("OurBrandsContent");
+  DisplayNone("PartnersContent");
+
+  DisplayBlock("EmptyBarEnabled1");
+  DisplayBlock("EmptyBarEnabled2");
+  DisplayBlock("EmptyBarEnabled3");
+  DisplayNone("EmptyBarDisabled");
+
+  DisplayNone("BotBar");
+}
+
+function myFunction(){
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }
