@@ -5,7 +5,7 @@ import BotTabCenter from '../BotTabCenter.png';
 import Arrow from '../Arrow.png';
 
 function BotTab(props){
-        return <div style={props.styles} id={props.id}>
+        return <div style={props.styles} id={props.id} className="BotBar">
         <img style={{height:"200px"}}src={BotTabLeft}></img>
         <img style={{width:props.text.length*15+625, height:"200px"}} src={BotTabCenter}></img>
         <img style={{height:"200px"}}src={BotTabRight}></img>

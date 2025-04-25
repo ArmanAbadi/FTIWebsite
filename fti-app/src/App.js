@@ -2,6 +2,8 @@ import TopBar from './components/TopBar';
 import TopBarUnselected from './components/TopBarUnselected';
 import TopEmptyBar from './components/TopEmptyBar';
 import BotTab from './components/BotTab';
+import BotTabShort from './components/BotTabShort';
+import BotTabShortest from './components/BotTabShortest';
 
 import EmptyTabLeft from './EmptyTabLeft.png';
 import EmptyTabRight from './EmptyTabRight.png';
@@ -14,6 +16,8 @@ import { preload } from 'react-dom';
 const defaultStyle = {position:"relative", height:"89px", display:"block"};
 const defaultStyleNone = {position:"relative", height:"89px", display:"none"};
 const bottomStyle = {position:"absolute", height:"200px", display:"block", bottom:"0px", left:"5%"};
+const bottomStyleShort = {position:"absolute", height:"200px", display:"block", bottom:"0px"};
+const bottomStyleShortest = {position:"absolute", height:"200px", display:"block", bottom:"0px"};
 
 
 function App() {
@@ -26,10 +30,7 @@ function App() {
         
         <div className="topnav">
 
-          <div style={{display:"inline-block", backgroundColor:"white", padding: "0px 10px", cursor: "pointer"}} onClick={() => MainBackground()}>
-            <div style={{display:"flex", backgroundColor:"white", height:"89px", textAlign: "center", justifyContent:"center", alignItems:"center"}}>
-                <img src={"logoSmall.png"} alt="Logo" />
-            </div>
+          <div style={{backgroundSize:"contain", backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundImage:"url(logoSmall.png)", backgroundColor:"white", height:"89px", padding: "0px 10px", cursor: "pointer", width:"16vw", minWidth:"150px"}} onClick={() => MainBackground()}>
           </div>
 
           
@@ -81,20 +82,18 @@ function App() {
             <TopBarUnselected text="Stock Quote" customClickEvent={() => StockQuote()} ></TopBarUnselected>
           </div>
 
-          <div style={{backgroundColor:"white", justifyContent:"center", alignItems:"center", display:"flex"}}>
-            <button className="MenuIcon"></button>
+          <div className="dropdown" style={{backgroundColor:"white", justifyContent:"center", alignItems:"center", display:"flex"}}>
+            <button className="dropbtn MenuIcon" onClick={() => myFunction()}></button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#" onClick={()=>Partners()}>Partners</a>
+              <a href="#" onClick={()=>Corporate()}>Corporate</a>
+              <a href="#" onClick={()=>LifeOffering()}>Life Offering</a>
+              <a href="#" onClick={()=>News()}>News</a>
+              <a href="#" onClick={()=>StockQuote()}>Stock Quote</a>
+            </div>
           </div>
-          
         </div>
 
-        <div class="dropdown">
-  <button onclick={() => myFunction()} class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
         <div id="content">
 
           <div id="centerLogo" className="center">
@@ -337,6 +336,12 @@ function App() {
         <div id="BotBar" style={bottomStyle}>
           <BotTab text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTab>
         </div>
+        <div id="BotBarShort" style={bottomStyleShort}>
+          <BotTabShort text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTabShort>
+        </div>
+        <div id="BotBarShortest" style={bottomStyleShortest}>
+          <BotTabShortest text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTabShortest>
+        </div>
         
       </div>
     </div>
@@ -350,6 +355,8 @@ export default App;
 function BotTabFunction(){
   News();
   DisplayNone("BotBar");
+  DisplayNone("BotBarShort");
+  DisplayNone("BotBarShortest");
 }
 
 function LifeOffering(){
@@ -420,6 +427,8 @@ function MainBackground(){
   bg.style.backgroundImage = "url('background.png')";
   DisplayBlock("centerLogo");
   DisplayBlock("BotBar");
+  DisplayBlock("BotBarShort");
+  DisplayBlock("BotBarShortest");
 }
 
 function UnselectAll(){
@@ -449,15 +458,19 @@ function UnselectAll(){
   DisplayNone("EmptyBarDisabled");
 
   DisplayNone("BotBar");
+  DisplayNone("BotBarShort");
+  DisplayNone("BotBarShortest");
 }
 
 function myFunction(){
-
+  console.log("press");
+  document.getElementById("myDropdown").classList.toggle("show");
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
+    console.log("asd");
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
