@@ -17,7 +17,7 @@ const defaultStyle = {position:"relative", height:"89px", display:"block"};
 const defaultStyleNone = {position:"relative", height:"89px", display:"none"};
 const bottomStyle = {position:"absolute", height:"200px", display:"block", bottom:"0px", left:"5%"};
 const bottomStyleShort = {position:"absolute", height:"200px", display:"block", bottom:"0px"};
-const bottomStyleShortest = {position:"absolute", height:"200px", display:"block", bottom:"0px"};
+const bottomStyleShortest = {position:"absolute", height:"160px", display:"block", bottom:"0px"};
 
 
 function App() {
@@ -30,13 +30,13 @@ function App() {
         
         <div className="topnav">
 
-          <div style={{backgroundSize:"contain", backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundImage:"url(logoSmall.png)", backgroundColor:"white", height:"89px", padding: "0px 10px", cursor: "pointer", width:"16vw", minWidth:"150px"}} onClick={() => MainBackground()}>
+          <div className="TopLogo" onClick={() => MainBackground()}>
           </div>
 
           
-          <img id="EmptyBarEnabled1" src={EmptyTabLeft}></img>
-          <img id="EmptyBarEnabled2" src={EmptyTabCenter} style={{flex:"1", height:"89px"}}></img>
-          <img id="EmptyBarEnabled3" src={EmptyTabRight}></img>
+          <img className="EmptyBar" id="EmptyBarEnabled1" src={EmptyTabLeft}></img>
+          <img className="EmptyBarCenter" id="EmptyBarEnabled2" src={EmptyTabCenter} style={{flex:"1", height:"89px"}}></img>
+          <img className="EmptyBar" id="EmptyBarEnabled3" src={EmptyTabRight}></img>
 
           <div id="EmptyBarDisabled" style={{flex:"1", height:"89px", backgroundColor:"white", display:"none"}}></div>
           
@@ -334,13 +334,13 @@ function App() {
         </div>
 
         <div id="BotBar" style={bottomStyle}>
-          <BotTab text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTab>
+          <BotTab text={["Read about what we have going on."]} customClickEvent={() => BotTabFunction()}></BotTab>
         </div>
         <div id="BotBarShort" style={bottomStyleShort}>
-          <BotTabShort text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTabShort>
+          <BotTabShort text={["Read about what we have going on."]} customClickEvent={() => BotTabFunction()}></BotTabShort>
         </div>
         <div id="BotBarShortest" style={bottomStyleShortest}>
-          <BotTabShortest text={["Read about what we have",<br/>,"going on."]} customClickEvent={() => BotTabFunction()}></BotTabShortest>
+          <BotTabShortest text={["Read about what we have going on."]} customClickEvent={() => BotTabFunction()}></BotTabShortest>
         </div>
         
       </div>

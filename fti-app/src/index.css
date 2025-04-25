@@ -89,6 +89,32 @@ html, body {
   margin:16px;
 }
 
+@media screen and (max-width: 400px) {
+  .Title{
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .Name{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .Description{
+    font-size: 12px;
+    text-align: center;
+  }
+  .BrandName{
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+    margin:16px;
+  }
+  .CorporateContent{
+    font-size:12px;
+  }
+}
+
 .container .containerBox {
   width: 100%;
   display: table;
@@ -193,6 +219,98 @@ button {
   width:64px;
   height:64px;
 }
+@media screen and (max-width: 400px) {
+  button {
+    background: var(--img) 50%/ contain #fff;
+    background-blend-mode: multiply;
+    transition: background-color .4s;
+    width:20px;
+    height:20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .EmptyBar {
+    display:none;
+    width:0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .EmptyBarCenter {
+    background-color: white;
+  }
+}
+.BottomBarText{
+  font-size: 24px;
+  margin:10px;
+  width:300px;
+}
+@media screen and (max-width: 400px) {
+  .BottomBarText {
+    font-size: 16px;
+    width:150px;
+  }
+}
+.BottomBarButton{
+  font-size: 24px;
+  width:275px;
+}
+
+@media screen and (max-width: 400px) {
+  .BottomBarButton{
+    font-size: 12px;
+    width:140px;
+  }
+}
+.BottomBar{
+  width:300px;
+}
+@media screen and (max-width: 400px) {
+  .BottomBar{
+    width:50px;
+  }
+}
+.Arrow{
+  position: absolute;
+  margin-left: 10px;
+  width:25px;
+  top:15%;
+}
+@media screen and (max-width: 400px) {
+  .Arrow{
+    position: absolute;
+    margin-left: 5px;
+    width:15px;
+    top:30%;
+  }
+}
+
+.TopLogo{
+  background-size:contain;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-image:url("./logoSmallPadding.png");
+  background-color:white;
+  height:89px; 
+  padding:0px 10px;
+  cursor: pointer;
+  width:16vw;
+  min-width:150px;
+}
+@media screen and (max-width: 400px) {
+  .TopLogo{
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-image:url("./logoSmallPadding.png");
+    background-color:white;
+    height:89px; 
+    padding:0px 10px;
+    cursor: pointer;
+    width:16vw;
+    min-width:100px;
+  }
+}
+
 
 .MenuIcon {
    --img: url('./MenuIcon.png');
@@ -200,6 +318,7 @@ button {
    background-repeat: no-repeat;
    border: none;
    border-radius: 10px;
+   margin-right:10px;
   }
 
   .MenuIcon:active  {     
