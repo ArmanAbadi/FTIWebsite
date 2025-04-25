@@ -174,7 +174,6 @@ function App() {
                         </div>
                   </div>
             </div>
-          
           </div>
 
           <div id="NewsContent" className="CorporateContent" style={{display:"none"}}>
